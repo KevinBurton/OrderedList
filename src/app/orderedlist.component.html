@@ -1,0 +1,18 @@
+<div>
+  <label for="orderedListInput">List</label>
+  <input
+    class="add-item"
+    id="orderedListInput"
+    type="text"
+    (keydown.enter)="listInputHandler($event.target)"
+  />
+  <button class="sort-direction" (click)="listSortDirectionHandler()">
+    {{direction ? "Up" : "Down"}}
+  </button>
+  <button class="clear-list" (click)="listClearHandler()">Clear</button>
+  <div style="max-width: 100px;">
+    <ol class="items-list">
+      <li *ngFor="let item of sortedList">{{item}}</li>
+    </ol>
+  </div>
+</div>
